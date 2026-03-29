@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-surface: #020617; /* Slate 950 */
+
+  --animate-float-1: float 4s ease-in-out infinite;
+  --animate-float-2: float 5s ease-in-out infinite;
+  --animate-float-3: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse-slow 3s ease-in-out infinite;
+  --animate-marquee: marquee 90s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 90s linear infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+  }
+  
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  @keyframes marquee-reverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+}
+
+:root {
+  --background: #020617; /* Deep Slate 950 background forced globally */
+  --foreground: #f8fafc; /* White/Slate 50 text forced globally */
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark; /* Force dark scrollbars */
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
